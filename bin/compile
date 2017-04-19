@@ -119,3 +119,4 @@ sed -i '0.0.0.0'$(echo $OPENSHIFT_GO_IP)'/g' sock5.go
 sed -i 's/10080'$(echo $OPENSHIFT_GO_PORT)'/g' sock5.go
 
 go build
+
