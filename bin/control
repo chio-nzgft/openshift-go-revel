@@ -36,13 +36,13 @@ function start() {
 
     pushd "$OPENSHIFT_REPO_DIR" > /dev/null
     {
-	package="revel"
+	package="sock5"
 
-        if [ -f "bin/$package" ]; then
-            echo "`date +"$FMT"`: Starting application '$OPENSHIFT_APP_NAME' from bin/$package..."
+        if [ -f "$package" ]; then
+            echo "`date +"$FMT"`: Starting application '$OPENSHIFT_APP_NAME' from $package..."
 
             export GOPATH=$OPENSHIFT_REPO_DIR
-	    bin/revel run myapp >> $logf 2>&1 &
+	    sock5 >> $logf 2>&1 &
 
             ret=$?
             npid=$!
